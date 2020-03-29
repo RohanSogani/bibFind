@@ -1,0 +1,15 @@
+{% extends 'bibHome/base.html' %}
+{% block content %}
+    {% for bib in bibs %}
+    <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            <a class="mr-2" href="#">{{ bib.author }}</a>
+            <small class="text-muted">{{ bib.date_searched }}</small>
+          </div>
+          <h2><a class="article-title" href="#">{{ bib.title }}</a></h2>
+          <p class="article-content">{{ bib.bib }}</p>
+        </div>
+      </article>
+    {% endfor %}
+{% endblock content %}
