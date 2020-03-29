@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Bib
 # Create your views here.
 
 bibs = [
@@ -18,7 +19,7 @@ bibs = [
 
 def home(request):
     context = {
-        'bibs': bibs
+        'bibs': Bib.objects.all()
     }
     return render(request, 'bibHome/home.html', context)
 
